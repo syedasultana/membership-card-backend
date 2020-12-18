@@ -15,7 +15,16 @@ const getProducts = async (request, response) => {
     })
 }
 
+const getInvoices = async (request, response) => {
+  await pool.query('SELECT * FROM invoices', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 module.exports = {
-    getProducts
-    
+    getProducts,
+    getInvoices
 }

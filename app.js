@@ -42,7 +42,7 @@ app.get('/', (request, response) => {
 //app.get('/products', db.getProducts)
 app.use('/products', db.getProducts)
 
-
+app.get('/invoices', db.getInvoices);
 
 app.listen(3100, () => {
   console.log('Started running server on port 3100')
